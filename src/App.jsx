@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import EstudianteCard from './components/EstudianteCard';
+import Header from './components/Header';
 
 // Configuración de github
 const OWNER = import.meta.env.VITE_GITHUBUSER;
@@ -43,35 +44,13 @@ function App() {
 
   return (
     <div style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-
-      <header style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        gap: '25px', 
-        marginBottom: '40px', 
-        borderBottom: '2px solid #e2e8f0', 
-        paddingBottom: '20px' 
-      }}>
-        <img 
-          src="logoubb.png" 
-          alt="Logo UBB" 
-          style={{ height: '70px', objectFit: 'contain' }}
-        />
-        <div>
-          <h1 style={{ 
-            fontSize: '2.5rem', 
-            fontWeight: '800', 
-            margin: 0,
-            color: '#014898'
-          }}>
-            Muro de la Fama UBB
-          </h1>
-          <p style={{ color: '#475569', margin: '5px 0 0 0', fontSize: '1.1rem' }}>
-            Demostración Práctica: Frontend React & Control de Versiones con Git
-          </p>
-        </div>
-      </header>
-
+      
+      {/* Componente de encabezado con título, subtítulo y logo */}
+      <Header 
+        titulo="Muro de la Fama UBB" 
+        subtitulo="Demostración Práctica: Frontend React & Control de Versiones con Git" 
+        logoSrc="/logoubb.png" 
+      />
       {/* Renderizado de tarjetas */}
       {loading ? (
         <p style={{ color: '#64748b', textAlign: 'center', fontSize: '1.2rem', fontWeight: '500' }}>
